@@ -1,6 +1,8 @@
 syntax = "proto3";
 package pb;
+// protoc -I. --go_out=plugins=grpc:./../pb .\logic_client_ext.proto
 
+// 注册一个设备
 message RegisterDeviceReq {
     int64 app_id = 1;//appid
     int32 type = 2;//设备类型
@@ -9,6 +11,29 @@ message RegisterDeviceReq {
     string system_version = 5; // 系统版本
     string sdk_version = 6; // sdk版本号
 }
+// 添加一个用户
+message User {
+    int64 user_id = 1;//用户id
+    string nicknamec = 2;//昵称
+    int32 sex = 3;//性别
+    string avatar_url = 4;//头像地址
+    string extra  = 5;//附加字段
+    int64 create_time = 6;//创建时间
+    int64 update_time = 7;//更新时间
+}
+message AddUserReq {
+    User user = 1;//用户信息
+}
+message AddUserResp {
+}
+// 获得用户
+message GetUserReq {
+    int64 user_id = 1; // 用户id
+}
+message GetUserResp {
+    User user = 1; // 用户信息
+}
+
 
 message RegisterDeviceResp {
     int64 device_id = 1; // 设备id
@@ -16,4 +41,8 @@ message RegisterDeviceResp {
 
 service LogicClientExt {
     rpc RegisterDevice (RegisterDeviceReq) returns (RegisterDeviceResp);
+    //添加用户信息
+    rpc AddUser (AddUserReq) returns (AddUserResp);
+    // 获取用户信息
+    rpc GetUser (GetUserReq) returns (GetUserResp);
 }

@@ -3,3 +3,10 @@
 2020-01-27 10:21:11.976	INFO	logic/logic_client_ext_test.go:35	device_id:17 
 2020-01-27 10:23:16.389	ERROR	logic/logic_client_ext_test.go:32	rpc error: code = Unknown desc = [Error 1062: Duplicate entry '0' for key 'uk_device_id']
 2020-01-27 10:43:50.909	INFO	logic/logic_client_ext_test.go:35	device_id:19 
+2020-01-27 10:54:29.063	ERROR	logic/logic_client_ext_test.go:32	rpc error: code = Unavailable desc = all SubConns are in TransientFailure, latest connection error: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:50001: connectex: No connection could be made because the target machine actively refused it."
+2020-01-27 10:55:31.622	INFO	logic/logic_client_ext_test.go:35	device_id:20 
+2020-01-27 10:57:24.121	INFO	logic/logic_client_ext_test.go:35	device_id:21 
+2020-01-27 10:57:48.150	INFO	logic/logic_client_ext_test.go:35	device_id:22 
+2020-01-27 10:58:32.582	INFO	logic/logic_client_ext_test.go:35	device_id:23 
+2020-01-27 14:18:38.419	ERROR	logic/logic_client_ext_test.go:32	rpc error: code = Unavailable desc = all SubConns are in TransientFailure, latest connection error: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:50001: connectex: No connection could be made because the target machine actively refused it."
+2020-01-27 14:20:52.561	INFO	logic/logic_client_ext_test.go:64	

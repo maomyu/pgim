@@ -2,10 +2,10 @@ package logic
 
 import (
 	"net"
-	
+
+	"github.com/yuwe1/pgim/pb"
 	"github.com/yuwe1/pgim/rpcconf"
 	"google.golang.org/grpc"
-	"github.com/yuwe1/pgim/pb"
 )
 
 func StartRpcServer() {
