@@ -7,6 +7,8 @@ import (
 	"github.com/yuwe1/pgim/internal/dao"
 	"github.com/yuwe1/pgim/internal/model"
 	"github.com/yuwe1/pgim/pkg/logger"
+
+	"github.com/yuwe1/pgim/pkg/util"
 )
 
 type deviceService struct{}
@@ -26,6 +28,8 @@ func (*deviceService) Register(ctx context.Context, device model.Device) (int64,
 		return 0, fmt.Errorf("parm error")
 	}
 
+	deviceId, err := util.DeviceIdUid.Get()
+	device.DeviceId = deviceId
 	// 添加一个设备
 	id, err := dao.DeviceDao.Add(device)
 	if err != nil && id == -1 {

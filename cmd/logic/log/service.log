@@ -1,0 +1,5 @@
+2020-01-27 10:19:50.207	INFO	redispool/redis.go:29	{true 112.124.31.82:6379 redis6379recycle072829 8 3000 {false   []}}
+2020-01-27 10:19:50.487	INFO	logic/main.go:17	logic server start
+2020-01-27 10:23:16.387	ERROR	dao/device.go:21	Error 1062: Duplicate entry '0' for key 'uk_device_id'
+2020-01-27 10:43:26.960	INFO	redispool/redis.go:29	{true 112.124.31.82:6379 redis6379recycle072829 8 3000 {false   []}}
+2020-01-27 10:43:27.139	INFO	logic/main.go:30	logic server start
