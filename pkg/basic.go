@@ -4,7 +4,7 @@ import (
 	"github.com/yuwe1/pgim/pkg/client/rediscli/redispool"
 	"github.com/yuwe1/pgim/pkg/client/dbpool"
 	"github.com/yuwe1/pgim/pkg/config"
-	"github.com/yuwe1/pgim/pkg/basic/mq"
+	"github.com/yuwe1/pgim/pkg/mq"
 )
 
 func Init() {
