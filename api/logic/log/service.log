@@ -10,3 +10,18 @@
 2020-01-27 10:58:32.582	INFO	logic/logic_client_ext_test.go:35	device_id:23 
 2020-01-27 14:18:38.419	ERROR	logic/logic_client_ext_test.go:32	rpc error: code = Unavailable desc = all SubConns are in TransientFailure, latest connection error: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:50001: connectex: No connection could be made because the target machine actively refused it."
 2020-01-27 14:20:52.561	INFO	logic/logic_client_ext_test.go:64	
+2020-01-28 12:26:16.089	ERROR	logic/logic_client_ext_test.go:44	rpc error: code = Unavailable desc = all SubConns are in TransientFailure, latest connection error: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:50001: connectex: No connection could be made because the target machine actively refused it."
+2020-01-28 12:26:17.461	ERROR	logic/logic_client_ext_test.go:61	rpc error: code = Unavailable desc = all SubConns are in TransientFailure, latest connection error: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:50001: connectex: No connection could be made because the target machine actively refused it."
+2020-01-28 12:28:06.018	ERROR	logic/logic_client_ext_test.go:44	rpc error: code = Unavailable desc = all SubConns are in TransientFailure, latest connection error: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:50001: connectex: No connection could be made because the target machine actively refused it."
+2020-01-28 12:28:07.332	ERROR	logic/logic_client_ext_test.go:61	rpc error: code = Unavailable desc = all SubConns are in TransientFailure, latest connection error: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:50001: connectex: No connection could be made because the target machine actively refused it."
+2020-01-28 12:28:17.252	ERROR	logic/logic_client_ext_test.go:44	rpc error: code = Unavailable desc = all SubConns are in TransientFailure, latest connection error: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:50001: connectex: No connection could be made because the target machine actively refused it."
+2020-01-28 12:28:18.562	ERROR	logic/logic_client_ext_test.go:61	rpc error: code = Unavailable desc = all SubConns are in TransientFailure, latest connection error: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:50001: connectex: No connection could be made because the target machine actively refused it."
+2020-01-28 12:31:15.942	INFO	logic/logic_client_ext_test.go:76	user:<user_id:2 nicknamec:"10" sex:1 avatar_url:"10" extra:"10" create_time:1580077253 update_time:1580077253 > 
+2020-01-28 12:31:40.853	INFO	logic/logic_client_ext_test.go:47	device_id:24 
+2020-01-28 12:31:40.922	ERROR	logic/logic_client_ext_test.go:61	rpc error: code = Unknown desc = 用户已经存在
+2020-01-28 12:31:40.988	INFO	logic/logic_client_ext_test.go:76	user:<user_id:2 nicknamec:"10" sex:1 avatar_url:"10" extra:"10" create_time:1580077253 update_time:1580077253 > 
+2020-01-28 12:34:26.395	INFO	logic/logic_client_ext_test.go:50	device_id:25 
+2020-01-28 12:34:26.479	ERROR	logic/logic_client_ext_test.go:67	rpc error: code = Unknown desc = 用户已经存在
+2020-01-28 12:34:26.547	INFO	logic/logic_client_ext_test.go:82	user:<user_id:2 nicknamec:"10" sex:1 avatar_url:"10" extra:"10" create_time:1580077253 update_time:1580077253 > 
+2020-01-28 12:38:59.470	INFO	logic/logic_client_ext_test.go:84	user:<user_id:2 nicknamec:"10" sex:1 avatar_url:"10" extra:"10" create_time:1580077253 update_time:1580077253 > 
+2020-01-28 12:39:31.167	INFO	logic/logic_client_ext_test.go:80	user:<user_id:2 nicknamec:"10" sex:1 avatar_url:"10" extra:"10" create_time:1580077253 update_time:1580077253 > 

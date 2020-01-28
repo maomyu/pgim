@@ -32,6 +32,8 @@ func getCtx() context.Context {
 		"request_id", strconv.FormatInt(time.Now().UnixNano(), 10)))
 }
 func TestLogicExtServer_RegisterDevice(t *testing.T) {
+	t.Skip()
+
 	resp, err := getLogicExtClient().RegisterDevice(context.TODO(), &pb.RegisterDeviceReq{
 		AppId:         1,
 		Type:          2,
@@ -48,6 +50,8 @@ func TestLogicExtServer_RegisterDevice(t *testing.T) {
 }
 
 func TestLogicExtServer_AddUser(t *testing.T) {
+	t.Skip()
+
 	resp, err := getLogicExtClient().AddUser(getCtx(),
 		&pb.AddUserReq{
 			User: &pb.User{
@@ -57,6 +61,18 @@ func TestLogicExtServer_AddUser(t *testing.T) {
 				Extra:     "10",
 			},
 		})
+	if err != nil {
+		logger.Sugar.Error(err)
+		return
+	}
+	logger.Sugar.Info(resp)
+}
+
+// 获得用户
+func TestLogicExtServer_GetUser(t *testing.T) {
+	resp, err := getLogicExtClient().GetUser(getCtx(), &pb.GetUserReq{
+		UserId: 2,
+	})
 	if err != nil {
 		logger.Sugar.Error(err)
 		return

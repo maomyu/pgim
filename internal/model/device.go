@@ -2,6 +2,11 @@ package model
 
 import "time"
 
+const (
+	DeviceOnLine  = 1 // 设备在线
+	DeviceOffLine = 0 // 设备离线
+)
+
 // 设备
 type Device struct {
 	Id            int64     `json:"id"`             // 设备id

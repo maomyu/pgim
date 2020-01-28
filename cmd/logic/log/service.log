@@ -11,3 +11,5 @@
 2020-01-27 14:20:11.502	INFO	logic/main.go:30	logic server start
 2020-01-27 14:20:34.874	INFO	redispool/redis.go:29	{true 112.124.31.82:6379 redis6379recycle072829 8 3000 {false   []}}
 2020-01-27 14:20:35.016	INFO	logic/main.go:30	logic server start
+2020-01-28 12:30:51.299	INFO	redispool/redis.go:29	{true 112.124.31.82:6379 redis6379recycle072829 8 3000 {false   []}}
+2020-01-28 12:30:51.528	INFO	logic/main.go:30	logic server start

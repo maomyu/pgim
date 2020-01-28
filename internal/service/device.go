@@ -42,3 +42,17 @@ func (*deviceService) Register(ctx context.Context, device model.Device) (int64,
 	}
 	return id, nil
 }
+
+// 获取所有用户的所有的在线设备
+func (*deviceService) ListOnlineByUserId(ctx context.Context, appId int64, userId int64) ([]model.Device, error) {
+	// 从缓存中获取
+
+	// 从数据库中获取
+	devices, err := dao.DeviceDao.ListOnlineByUserId(appId, userId)
+	if err != nil {
+		return nil, err
+	}
+	// 存储到缓存中
+	return devices, nil
+
+}

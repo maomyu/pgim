@@ -23,3 +23,19 @@ func (*userService) Add(ctx context.Context, user model.User) error {
 	}
 	return nil
 }
+
+// 获取用户信息
+func (*userService) Get(ctx context.Context, appId int64, userId int64) (*model.User, error) {
+	// 根据appId和userId获取用户信息的缓存
+
+	// 从数据库中获取
+	user, err := dao.UserDao.Get(appId, userId)
+	if err != nil {
+		return nil, err
+	}
+	if user != nil {
+		// 将用户信息存储到缓存中
+
+	}
+	return user, err
+}

@@ -22,7 +22,7 @@ func ContextWithRequstId(ctx context.Context, requestId int64) context.Context {
 }
 
 // 获取ctx的RequstId
-func GetCtxRequest(ctx context.Context) int64 {
+func GetCtxRequestId(ctx context.Context) int64 {
 	md, ok := metadata.FromIncomingContext(ctx)
 	if !ok {
 		return 0

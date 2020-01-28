@@ -7,8 +7,8 @@ import (
 	"github.com/yuwe1/pgim/internal/model"
 	"github.com/yuwe1/pgim/internal/service"
 	"github.com/yuwe1/pgim/pb"
+	"github.com/yuwe1/pgim/pkg/gerrors"
 	"github.com/yuwe1/pgim/pkg/grpclib"
-	
 )
 
 type LogicClientExt struct {
@@ -61,7 +61,7 @@ func (*LogicClientExt) AddUser(ctx context.Context, req *pb.AddUserReq) (*pb.Add
 	return &pb.AddUserResp{}, service.UserService.Add(ctx, user)
 }
 func (*LogicClientExt) GetUser(ctx context.Context, req *pb.GetUserReq) (*pb.GetUserResp, error) {
-	appId, _, __, err := grpclib.GetCtxData(ctx)
+	appId, _, _, err := grpclib.GetCtxData(ctx)
 	if err != nil {
 		return &pb.GetUserResp{}, err
 	}
@@ -70,17 +70,32 @@ func (*LogicClientExt) GetUser(ctx context.Context, req *pb.GetUserReq) (*pb.Get
 		return &pb.GetUserResp{}, nil
 	}
 	if user == nil {
-		return nil, fmt.Errorf("[%w]",gerrors.ErrUserNotExist)
+		return nil, fmt.Errorf("[%w]", gerrors.ErrUserNotExist)
 	}
 
 	pbUser := pb.User{
 		UserId:     user.UserId,
-		Nicknamec:   user.Nickname,
+		Nicknamec:  user.Nickname,
 		Sex:        user.Sex,
 		AvatarUrl:  user.AvatarUrl,
 		Extra:      user.Extra,
 		CreateTime: user.CreateTime.Unix(),
 		UpdateTime: user.UpdateTime.Unix(),
 	}
-	return &pb.GetUserResp{User:&pbUser}, nil
+	return &pb.GetUserResp{User: &pbUser}, nil
+}
+
+//发送消息
+func (*LogicClientExt) SendMessage(ctx context.Context, req *pb.SendMessageReq) (*pb.SendMessageResp, error) {
+	appId, userId, deviceId, err := grpclib.GetCtxData(ctx)
+	if err != nil {
+		return nil, err
+	}
+	sender := model.Sender{
+		AppId:      appId,
+		SenderType: pb.SenderType_ST_USER,
+		SenderId:   userId,
+		DeviceId:   deviceId,
+	}
+	err = service.MessageService.Send(ctx, sender, req)
 }
